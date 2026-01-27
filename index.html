@@ -408,32 +408,42 @@
             setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
         }
 
+        // --- NEW SECURE LOGIC ---
         async function generateAI() {
             const topic = document.getElementById('topic').value;
             const resCont = document.getElementById('result-container');
             const resBox = document.getElementById('result');
             const loader = document.getElementById('loader');
-            const API_KEY = "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"; 
-            if(!topic) return;
+
+            if(!topic) return showToast("Topic toh enter karo! ⚠️");
+            
             loader.style.display = "block";
             resCont.style.display = "none";
+
             try {
-                const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+                // Securely calling our internal API
+                const response = await fetch("/api/generate", {
                     method: "POST",
-                    headers: { "Authorization": `Bearer ${API_KEY}`, "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        model: "llama-3.1-8b-instant",
-                        messages: [{role: "user", content: `Viral Hinglish Instagram script for: ${topic}`}]
-                    })
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ topic: topic })
                 });
+                
                 const data = await response.json();
-                resBox.innerText = data.choices[0].message.content;
-                resCont.style.display = "block";
+                
+                if(data.candidates && data.candidates[0].content.parts[0].text) {
+                    resBox.innerText = data.candidates[0].content.parts[0].text;
+                    resCont.style.display = "block";
+                } else {
+                    throw new Error("Invalid response");
+                }
             } catch (err) {
-                resBox.innerText = "Error!";
+                resBox.innerText = "Error! Deploy with GEMINI_API_KEY in Vercel.";
                 resCont.style.display = "block";
-            } finally { loader.style.display = "none"; }
+            } finally { 
+                loader.style.display = "none"; 
+            }
         }
+
         function copyContent() {
             const text = document.getElementById('result').innerText;
             navigator.clipboard.writeText(text);
