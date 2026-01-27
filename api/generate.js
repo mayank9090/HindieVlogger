@@ -1,35 +1,32 @@
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   const { topic } = req.body;
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
 
-  if (!apiKey) {
-    return res.status(500).json({ error: 'API Key missing!' });
-  }
+  if (!apiKey) return res.status(500).json({ error: 'Groq API Key missing!' });
 
   try {
-    // UPDATED URL: Using v1 instead of v1beta and fixing the path
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      },
       body: JSON.stringify({
-        contents: [{
-          parts: [{ text: `Write a viral Instagram reel script about: ${topic}. Make it engaging for हिNDIE VLOGGER audience.` }]
+        model: "llama-3.3-70b-versatile", // Latest & Fastest model
+        messages: [{
+          role: "user",
+          content: `Write a viral Instagram reel script for the topic: ${topic}. 
+          Style: High energy, engaging, and perfect for हिNDIE VLOGGER. 
+          Include: Hook, Body, and Call to action.`
         }]
       })
     });
 
     const data = await response.json();
-    
-    if (data.error) {
-      return res.status(500).json({ error: data.error.message });
-    }
-
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ error: 'Server Connection Error' });
+    res.status(500).json({ error: 'Connection Failed' });
   }
 }
