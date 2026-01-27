@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { topic } = req.body;
+  const { topic, language } = req.body;
   const apiKey = process.env.GROQ_API_KEY;
 
   if (!apiKey) return res.status(500).json({ error: 'Groq API Key missing!' });
@@ -14,12 +14,13 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: "llama-3.3-70b-versatile", // Latest & Fastest model
+        model: "llama-3.3-70b-versatile",
         messages: [{
           role: "user",
-          content: `Write a viral Instagram reel script for the topic: ${topic}. 
-          Style: High energy, engaging, and perfect for हिNDIE VLOGGER. 
-          Include: Hook, Body, and Call to action.`
+          content: `Write a viral Instagram reel script about: ${topic}. 
+          Language: Use ${language}.
+          Format: Hook, Scene Descriptions, and Call to Action.
+          Tone: High energy.`
         }]
       })
     });
@@ -27,6 +28,6 @@ export default async function handler(req, res) {
     const data = await response.json();
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ error: 'Connection Failed' });
+    res.status(500).json({ error: 'API Error' });
   }
 }
