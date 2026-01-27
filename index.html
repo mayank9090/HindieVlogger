@@ -308,7 +308,7 @@
             
             <div class="container">
                 <div class="header">
-                    <h1>InstaGrow Elite</h1>
+                    <h1>InstaGrow</h1>
                     <p style="text-align:center; font-size:10px; color:#64748b; letter-spacing:2px; margin-top:5px; font-weight:800;">VIRAL SCRIPT ENGINE</p>
                 </div>
                 <input type="text" id="topic" placeholder="Enter topic (e.g. Solo Travel Tips)">
@@ -375,7 +375,7 @@
         <div class="service-list-item"><h4>Website Development</h4><p>React, Next.js aur modern tech se bani websites.</p></div>
         <div class="service-list-item"><h4>Software Development</h4><p>Business automation aur custom software solutions.</p></div>
         <div class="service-list-item"><h4>AI Chatbots</h4><p>Custom AI integration (Groq API, Llama).</p></div>
-        <div class="service-list-item)<h4>E-commerce</h4><p>Full online store setup for your brand.</p></div>
+        <div class="service-list-item"><h4>E-commerce</h4><p>Full online store setup for your brand.</p></div>
         <a href="https://wa.me/message/6CJSZSPPROGGK1" class="biz-btn" style="width:100%; text-align:center; background: var(--primary); margin-top:20px;">BUILD YOUR IDEA 🚀</a>
     </div>
 
@@ -428,9 +428,9 @@
                 
                 const data = await response.json();
                 
-                // --- FIX LOGIC START (No deletions, just correct path) ---
-                if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
-                    resBox.innerText = data.candidates[0].content.parts[0].text;
+                // --- FIXED LOGIC FOR GROQ/OPENAI FORMAT ---
+                if (data.choices && data.choices[0].message) {
+                    resBox.innerText = data.choices[0].message.content;
                     resCont.style.display = "block";
                 } else if (data.error) {
                     resBox.innerText = "Error: " + (data.error.message || data.error);
@@ -438,10 +438,9 @@
                 } else {
                     throw new Error("Invalid Response");
                 }
-                // --- FIX LOGIC END ---
 
             } catch (err) {
-                resBox.innerText = "Error! Deploy with GEMINI_API_KEY in Vercel and REDEPLOY.";
+                resBox.innerText = "Error! Deploy with GROQ_API_KEY in Vercel and REDEPLOY.";
                 resCont.style.display = "block";
             } finally {
                 loader.style.display = "none";
