@@ -408,20 +408,19 @@
             setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
         }
 
-        // --- NEW SECURE LOGIC ---
         async function generateAI() {
             const topic = document.getElementById('topic').value;
             const resCont = document.getElementById('result-container');
             const resBox = document.getElementById('result');
             const loader = document.getElementById('loader');
 
-            if(!topic) return showToast("Topic toh enter karo! ⚠️");
+            if(!topic) return showToast("Topic daalo bhai! ⚠️");
             
             loader.style.display = "block";
             resCont.style.display = "none";
 
             try {
-                // Securely calling our internal API
+                // Connecting to YOUR Vercel Backend
                 const response = await fetch("/api/generate", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -430,18 +429,14 @@
                 
                 const data = await response.json();
                 
-                if(data.candidates && data.candidates[0].content.parts[0].text) {
+                if(data.candidates) {
                     resBox.innerText = data.candidates[0].content.parts[0].text;
                     resCont.style.display = "block";
-                } else {
-                    throw new Error("Invalid response");
-                }
+                } else { throw new Error(); }
             } catch (err) {
-                resBox.innerText = "Error! Deploy with GEMINI_API_KEY in Vercel.";
+                resBox.innerText = "Error! Deploy with GEMINI_API_KEY in Vercel Settings and Redeploy.";
                 resCont.style.display = "block";
-            } finally { 
-                loader.style.display = "none"; 
-            }
+            } finally { loader.style.display = "none"; }
         }
 
         function copyContent() {
@@ -451,4 +446,4 @@
         }
     </script>
 </body>
-</html>
+                                                          </html>
