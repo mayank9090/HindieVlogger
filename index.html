@@ -375,7 +375,7 @@
         <div class="service-list-item"><h4>Website Development</h4><p>React, Next.js aur modern tech se bani websites.</p></div>
         <div class="service-list-item"><h4>Software Development</h4><p>Business automation aur custom software solutions.</p></div>
         <div class="service-list-item"><h4>AI Chatbots</h4><p>Custom AI integration (Groq API, Llama).</p></div>
-        <div class="service-list-item"><h4>E-commerce</h4><p>Full online store setup for your brand.</p></div>
+        <div class="service-list-item)<h4>E-commerce</h4><p>Full online store setup for your brand.</p></div>
         <a href="https://wa.me/message/6CJSZSPPROGGK1" class="biz-btn" style="width:100%; text-align:center; background: var(--primary); margin-top:20px;">BUILD YOUR IDEA 🚀</a>
     </div>
 
@@ -420,7 +420,6 @@
             resCont.style.display = "none";
 
             try {
-                // Connecting to YOUR Vercel Backend
                 const response = await fetch("/api/generate", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -429,14 +428,24 @@
                 
                 const data = await response.json();
                 
-                if(data.candidates) {
+                // --- FIX LOGIC START (No deletions, just correct path) ---
+                if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
                     resBox.innerText = data.candidates[0].content.parts[0].text;
                     resCont.style.display = "block";
-                } else { throw new Error(); }
+                } else if (data.error) {
+                    resBox.innerText = "Error: " + (data.error.message || data.error);
+                    resCont.style.display = "block";
+                } else {
+                    throw new Error("Invalid Response");
+                }
+                // --- FIX LOGIC END ---
+
             } catch (err) {
-                resBox.innerText = "Error! Deploy with GEMINI_API_KEY in Vercel Settings and Redeploy.";
+                resBox.innerText = "Error! Deploy with GEMINI_API_KEY in Vercel and REDEPLOY.";
                 resCont.style.display = "block";
-            } finally { loader.style.display = "none"; }
+            } finally {
+                loader.style.display = "none";
+            }
         }
 
         function copyContent() {
@@ -446,4 +455,4 @@
         }
     </script>
 </body>
-                                                          </html>
+</html>
