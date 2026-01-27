@@ -180,6 +180,14 @@
             background: linear-gradient(135deg, #00ffa3 0%, #00d1ff 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0;
         }
+
+        /* Yahan language dropdown ka style add kiya bas */
+        #language-select {
+            width: 100%; padding: 12px; background: #020617;
+            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px;
+            color: white; font-size: 14px; outline: none; margin-top: 15px;
+        }
+
         input {
             width: 100%; padding: 16px; background: #020617;
             border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px;
@@ -311,6 +319,12 @@
                     <h1>InstaGrow</h1>
                     <p style="text-align:center; font-size:10px; color:#64748b; letter-spacing:2px; margin-top:5px; font-weight:800;">VIRAL SCRIPT ENGINE</p>
                 </div>
+                <select id="language-select">
+                    <option value="Hinglish">Language: Hinglish 🇮🇳</option>
+                    <option value="Hindi">Language: Hindi 🇮🇳</option>
+                    <option value="English">Language: English 🇺🇸</option>
+                    <option value="Odia">Language: Odia 🇮🇳</option>
+                </select>
                 <input type="text" id="topic" placeholder="Enter topic (e.g. Solo Travel Tips)">
                 <button onclick="generateAI()">GENERATE VIRAL SCRIPT 🚀</button>
                 <div id="loader" style="display:none; text-align:center; margin:25px; color:var(--primary); font-weight:bold; font-size:14px;">Processing हिNDIE VLOGGER... ⚡</div>
@@ -410,6 +424,7 @@
 
         async function generateAI() {
             const topic = document.getElementById('topic').value;
+            const lang = document.getElementById('language-select').value; // Naya language dropdown fetch kiya
             const resCont = document.getElementById('result-container');
             const resBox = document.getElementById('result');
             const loader = document.getElementById('loader');
@@ -423,12 +438,14 @@
                 const response = await fetch("/api/generate", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ topic: topic })
+                    body: JSON.stringify({ 
+                        topic: topic,
+                        language: lang // Backend ko language bhej raha hoon
+                    })
                 });
                 
                 const data = await response.json();
                 
-                // --- FIXED LOGIC FOR GROQ/OPENAI FORMAT ---
                 if (data.choices && data.choices[0].message) {
                     resBox.innerText = data.choices[0].message.content;
                     resCont.style.display = "block";
