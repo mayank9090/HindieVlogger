@@ -1,5 +1,6 @@
-export default async function handler(req, res) {
-    // API KEY hum Vercel Dashboard mein daalenge
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
+module.exports = async (req, res) => {
     const API_KEY = process.env.GEMINI_API_KEY; 
 
     if (req.method !== 'POST') return res.status(405).send('Method Not Allowed');
@@ -11,17 +12,13 @@ export default async function handler(req, res) {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                contents: [{
-                    parts: [{
-                        text: `Write a viral Instagram reel script for: "${topic}". Use a mix of Hindi and English (Hinglish) and sometimes Odia if the topic is local. Include Hook, Body, and relevant Hashtags.`
-                    }]
-                }]
+                contents: [{ parts: [{ text: `Write a viral Instagram reel script for: "${topic}" in Hinglish.` }] }]
             })
         });
 
         const data = await response.json();
         return res.status(200).json(data);
     } catch (error) {
-        return res.status(500).json({ error: "API connection failed" });
+        return res.status(500).json({ error: "Server Error" });
     }
-}
+};
