@@ -1,18 +1,38 @@
-<!DOCTYPE html>
+here<!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>हिNDIE VLOGGER | Official Portfolio</title>
+    <title>MAYANK PRADHAN | Official Website</title>
+
+    <!-- Browser Tab Favicon & Mobile Theme Color -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/521s3LCs/Airbrush-IMAGE-ENHANCER-1790365808501-1790365808501.png">
+    <meta name="theme-color" content="#00f2fe">
+
+    <!-- WhatsApp & Facebook Share Preview Meta Tags (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MAYANK PRADHAN | Web - App Developer">
+    <meta property="og:description" content="Explore my tech ventures, demo projects, and connect directly on WhatsApp.">
+    <meta property="og:image" content="https://i.postimg.cc/521s3LCs/Airbrush-IMAGE-ENHANCER-1790365808501-1790365808501.png">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+
+    <!-- Twitter / X Share Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MAYANK PRADHAN | Official Portfolio">
+    <meta name="twitter:description" content="Web - App Developer & Explorer. Tech Ventures, Custom Apps & Client Solutions.">
+    <meta name="twitter:image" content="https://i.postimg.cc/521s3LCs/Airbrush-IMAGE-ENHANCER-1790365808501-1790365808501.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Teko:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
-            --primary: #00ffa3;
+            --primary: #00f2fe;
+            --secondary: #2563eb;
             --travel: #ff4d00;
-            --bg: #05070a;
-            --card-bg: #0f172a;
-            --gold: #ffcc00; /* Skylink Theme */
+            --bg: #030712;
+            --card-bg: #0b1120;
+            --gold: #38bdf8;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -21,9 +41,9 @@
         /* --- HEADER & BRANDING --- */
         nav {
             display: flex; align-items: center; justify-content: space-between;
-            padding: 12px 6%; background: rgba(5, 7, 10, 0.98);
+            padding: 12px 6%; background: rgba(3, 7, 18, 0.95);
             backdrop-filter: blur(15px); position: sticky; top: 0; z-index: 1000;
-            border-bottom: 1px solid rgba(0, 255, 163, 0.1);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.12);
         }
         .brand-container { display: flex; align-items: center; gap: 12px; }
         
@@ -31,9 +51,9 @@
             width: 48px; height: 48px;
             border-radius: 50%;
             border: 2px solid var(--primary);
-            background-image: url('https://i.ibb.co/4RV3WnG8/IMG-20260105-231143.png');
+            background-image: url('https://i.postimg.cc/521s3LCs/Airbrush-IMAGE-ENHANCER-1790365808501-1790365808501.png');
             background-size: cover; background-position: center;
-            box-shadow: 0 0 15px rgba(0, 255, 163, 0.4);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.35);
         }
 
         .logo-text { display: flex; flex-direction: column; line-height: 1; }
@@ -41,11 +61,33 @@
         .logo-text .main-name span { color: var(--primary); }
         .logo-text .sub-tag { font-size: 9px; color: #64748b; letter-spacing: 2px; font-weight: 800; text-transform: uppercase; }
 
+        /* --- TOP NAV CALL BUTTON --- */
+        .nav-call-btn {
+            background: rgba(0, 242, 254, 0.08);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 7px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            transition: 0.3s;
+        }
+        .nav-call-btn i { font-size: 13px; }
+        .nav-call-btn:hover {
+            background: var(--primary);
+            color: #030712;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+        }
+
         /* --- HERO SECTION --- */
         .hero {
             height: 55vh;
-            background: linear-gradient(rgba(5, 7, 10, 0.4), rgba(5, 7, 10, 0.9)), 
-                        url('https://i.ibb.co/4RV3WnG8/IMG-20260105-231143.png');
+            background: linear-gradient(rgba(3, 7, 18, 0.45), rgba(3, 7, 18, 0.95)), 
+                        url('https://i.postimg.cc/WzGMFYXR/20260926130745.jpg');
             background-size: cover; background-position: center 30%;
             display: flex; flex-direction: column; justify-content: flex-end; align-items: center;
             padding-bottom: 40px; text-align: center;
@@ -53,10 +95,10 @@
         .hero h1 { font-family: 'Teko', sans-serif; font-size: 4.5rem; line-height: 0.9; margin-bottom: 5px; }
         .hero p { color: var(--primary); font-weight: 800; letter-spacing: 4px; font-size: 0.8rem; text-transform: uppercase; }
 
-        /* --- ADDED STATS STRIP --- */
+        /* --- STATS STRIP --- */
         .stats-strip {
             display: flex; justify-content: space-around; padding: 20px 0;
-            background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(0,255,163,0.1);
+            background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(0, 242, 254, 0.1);
         }
         .stat-item { text-align: center; }
         .stat-val { display: block; font-family: 'Teko', sans-serif; font-size: 1.8rem; color: var(--primary); line-height: 1; }
@@ -65,45 +107,120 @@
         /* --- TECH SKILLS GRID --- */
         .skills-grid {
             display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 20px 6%;
+            max-width: 500px; margin: 0 auto;
         }
         .skill-tag {
-            background: rgba(255,255,255,0.05); border: 1px solid var(--primary); padding: 8px 15px;
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(0, 242, 254, 0.35); padding: 8px 14px;
             border-radius: 12px; font-size: 11px; font-weight: 800; color: white; display: flex; align-items: center; gap: 8px;
+            transition: 0.3s;
+        }
+        .skill-tag:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 12px rgba(0, 242, 254, 0.3);
+            transform: translateY(-2px);
         }
 
-        /* --- ADDED BUTTON ANIMATIONS --- */
-        .biz-btn, button, .copy-btn, .social-link {
+        /* --- CERTIFIED FROM (STRICTLY SIDE-BY-SIDE GRID) --- */
+        .cert-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px 5% 35px;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+        .cert-badge {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 18px;
+            padding: 14px 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 8px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+        .cert-badge:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 242, 254, 0.25);
+        }
+        .cert-img-box {
+            width: 42px;
+            height: 42px;
+            background: #ffffff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .cert-img-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .cert-details h4 {
+            font-family: 'Teko', sans-serif;
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1;
+            letter-spacing: 0.5px;
+        }
+        .cert-details span {
+            font-size: 8px;
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 3px;
+        }
+
+        /* --- BUTTON ANIMATIONS --- */
+        .biz-btn, button, .social-link {
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
         }
-        .biz-btn:hover, button:hover, .copy-btn:hover {
+        .biz-btn:hover, button:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 20px rgba(0, 255, 163, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 242, 254, 0.25);
         }
         .social-link:hover { transform: translateY(-5px) rotate(10deg); }
 
         /* --- WORK SECTION --- */
-        .work-container { padding: 50px 8% 0px; text-align: center; } 
+        .work-container { padding: 30px 8% 0px; text-align: center; } 
         .section-title { font-family: 'Teko', sans-serif; font-size: 2.5rem; color: white; margin-bottom: 30px; }
         .section-title span { color: var(--primary); }
 
-        /* --- BUSINESS CARDS --- */
-        .biz-card, .finance-card, .tech-card {
+        /* --- BUSINESS & APP CARDS --- */
+        .biz-card, .finance-card, .tech-card, .app-card {
             width: 100%; max-width: 380px; padding: 25px;
-            border-radius: 28px; margin: 0 auto 40px auto; text-align: left;
+            border-radius: 28px; margin: 0 auto 35px auto; text-align: left;
             position: relative; overflow: hidden;
         }
         .biz-card {
-            background: linear-gradient(145deg, #1e293b, #0f172a);
-            border: 1px solid rgba(255, 204, 0, 0.2);
+            background: linear-gradient(145deg, #0f172a, #0b1120);
+            border: 1px solid rgba(56, 189, 248, 0.25);
         }
         .finance-card {
-            background: linear-gradient(145deg, #0f172a, #1e293b);
-            border: 1px solid rgba(0, 255, 163, 0.2);
+            background: linear-gradient(145deg, #0b1120, #0f172a);
+            border: 1px solid rgba(0, 242, 254, 0.25);
         }
         .tech-card {
-            background: linear-gradient(145deg, #020617, #1e293b);
+            background: linear-gradient(145deg, #030712, #0b1120);
             border: 1px solid var(--primary);
-            box-shadow: 0 0 20px rgba(0, 255, 163, 0.1);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.15);
+        }
+        .app-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
         }
         
         .biz-card::before { content: '✈️'; position: absolute; right: 20px; top: 20px; font-size: 30px; opacity: 0.2; }
@@ -116,8 +233,9 @@
         .biz-name { font-family: 'Teko', sans-serif; font-size: 2.2rem; color: white; margin: 5px 0; }
         .biz-desc { font-size: 13px; color: #94a3b8; margin-bottom: 15px; line-height: 1.5; }
         .biz-btn { 
-            display: inline-block; padding: 12px 24px; background: var(--gold); 
-            color: #000; border-radius: 12px; font-weight: 800; text-decoration: none; font-size: 14px;
+            display: inline-block; padding: 12px 24px; 
+            background: linear-gradient(135deg, #00f2fe 0%, #2563eb 100%); 
+            color: #fff; border-radius: 12px; font-weight: 800; text-decoration: none; font-size: 14px;
             cursor: pointer; border: none;
         }
 
@@ -139,14 +257,34 @@
             margin-bottom: 10px; border-left: 3px solid var(--primary);
         }
 
-        /* --- SUBSCRIBE SECTION STYLE --- */
-        .subscribe-box {
-            width: 100%; max-width: 380px; background: linear-gradient(145deg, #0f172a, #05070a);
-            border: 1px solid rgba(0, 255, 163, 0.1); padding: 30px 20px;
-            border-radius: 28px; margin: 40px auto; text-align: center;
+        /* --- CONTACT INQUIRY FORM STYLE --- */
+        .contact-box {
+            width: 100%; max-width: 380px; background: linear-gradient(145deg, #0b1120, #030712);
+            border: 1px solid rgba(0, 242, 254, 0.2); padding: 30px 22px;
+            border-radius: 28px; margin: 40px auto; text-align: left;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
         }
-        .sub-title { font-family: 'Teko', sans-serif; font-size: 2rem; color: white; margin-bottom: 10px; }
-        .sub-desc { font-size: 13px; color: #94a3b8; margin-bottom: 20px; }
+        .contact-title { font-family: 'Teko', sans-serif; font-size: 2.2rem; color: white; margin-bottom: 5px; text-align: center; }
+        .contact-title span { color: var(--primary); }
+        .contact-desc { font-size: 13px; color: #94a3b8; margin-bottom: 20px; text-align: center; }
+
+        input, select, textarea {
+            width: 100%; padding: 15px; background: #030712;
+            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px;
+            color: white; font-size: 14px; outline: none; margin-top: 12px; transition: 0.3s;
+            font-family: inherit;
+        }
+        input:focus, select:focus, textarea:focus { 
+            border-color: var(--primary); 
+            box-shadow: 0 0 12px rgba(0, 242, 254, 0.25); 
+        }
+        
+        button {
+            width: 100%; padding: 17px; 
+            background: linear-gradient(135deg, #00f2fe 0%, #2563eb 100%);
+            border: none; border-radius: 14px; color: #fff; font-weight: 800;
+            font-size: 15px; cursor: pointer; margin-top: 18px; letter-spacing: 1px;
+        }
 
         /* --- COMPACT SOCIAL GRID --- */
         .social-grid {
@@ -162,58 +300,12 @@
         
         .social-link.ig:hover { border-color: #E1306C; background: rgba(225, 48, 108, 0.1); }
         .social-link.wa:hover { border-color: #25D366; background: rgba(37, 211, 102, 0.1); }
-
-        /* --- AAPKA PROJECT --- */
-        .container {
-            width: 100%; max-width: 380px; background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.08); padding: 30px 20px;
-            border-radius: 28px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-            margin: 0 auto; position: relative;
-        }
-        .container::before { 
-            content: 'LIVE DEMO'; position: absolute; top: -10px; right: 20px; 
-            background: var(--primary); color: #000; font-size: 10px; font-weight: 800;
-            padding: 4px 12px; border-radius: 20px;
-        }
-        .header h1 {
-            font-weight: 800; font-size: 22px; text-align: center;
-            background: linear-gradient(135deg, #00ffa3 0%, #00d1ff 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0;
-        }
-
-        /* Yahan language dropdown ka style add kiya bas */
-        #language-select {
-            width: 100%; padding: 12px; background: #020617;
-            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px;
-            color: white; font-size: 14px; outline: none; margin-top: 15px;
-        }
-
-        input {
-            width: 100%; padding: 16px; background: #020617;
-            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px;
-            color: white; font-size: 16px; outline: none; margin-top: 25px; transition: 0.3s;
-        }
-        input:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(0, 255, 163, 0.1); }
-        button {
-            width: 100%; padding: 18px; background: linear-gradient(135deg, #00ffa3 0%, #00d1ff 100%);
-            border: none; border-radius: 16px; color: #000; font-weight: 800;
-            font-size: 16px; cursor: pointer; margin-top: 15px;
-        }
-        #result-container { margin-top: 25px; display: none; text-align: left; }
-        .result-box {
-            background: #020617; border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 18px; border-radius: 16px; font-size: 14px; line-height: 1.6;
-            color: #cbd5e1; white-space: pre-wrap;
-        }
-        .copy-btn {
-            background: rgba(255, 255, 255, 0.05); border: 1px solid var(--primary);
-            color: var(--primary); padding: 14px; border-radius: 14px;
-            margin-top: 12px; font-weight: 700; width: 100%; text-align: center; cursor: pointer;
-        }
+        .social-link.fb:hover { border-color: #1877F2; background: rgba(24, 119, 242, 0.1); }
 
         #toast {
-            visibility: hidden; min-width: 250px; background: var(--primary);
-            color: #000; text-align: center; border-radius: 50px; padding: 16px;
+            visibility: hidden; min-width: 250px; 
+            background: linear-gradient(135deg, #00f2fe 0%, #2563eb 100%);
+            color: #fff; text-align: center; border-radius: 50px; padding: 16px;
             position: fixed; z-index: 2000; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
             font-weight: 800; transition: 0.4s;
         }
@@ -224,6 +316,8 @@
         @media (max-width: 600px) {
             .hero h1 { font-size: 3.2rem; }
             nav { padding: 10px 4%; }
+            .nav-call-btn span { display: none; }
+            .nav-call-btn { padding: 8px 12px; }
         }
     </style>
 </head>
@@ -234,28 +328,31 @@
             <div class="brand-container">
                 <div class="profile-logo"></div>
                 <div class="logo-text">
-                    <span class="main-name">हिNDIE <span>VLOGGER</span></span>
+                    <span class="main-name">MAYANK <span>PRADHAN</span></span>
                     <span class="sub-tag">Tech &bull; Travel &bull; Storytelling</span>
                 </div>
             </div>
+            <a href="tel:+917846986313" class="nav-call-btn">
+                <i class="fas fa-phone"></i> <span>+91-7846986313</span>
+            </a>
         </nav>
 
         <section class="hero">
-            <p>Software Developer & Explorer</p>
+            <p>WEB - APP DEVELOPER & Explorer</p>
             <h1>CREATE. CODE. <br> EXPLORE.</h1>
         </section>
 
         <div class="stats-strip">
             <div class="stat-item">
-                <span class="stat-val">500+</span>
+                <span class="stat-val">743+</span>
                 <span class="stat-label">Happy Clients</span>
             </div>
             <div class="stat-item">
-                <span class="stat-val">52k+</span>
+                <span class="stat-val">86k+</span>
                 <span class="stat-label">Views</span>
             </div>
             <div class="stat-item">
-                <span class="stat-val">15+</span>
+                <span class="stat-val">20+</span>
                 <span class="stat-label">Tech Projects</span>
             </div>
         </div>
@@ -264,12 +361,59 @@
             <h2 class="section-title" style="font-size: 1.8rem;">Technical <span>Expertise</span></h2>
         </div>
 
+        <!-- UPDATED & EXPANDED TECHNICAL EXPERTISE -->
         <div class="skills-grid">
             <div class="skill-tag"><i class="fab fa-python" style="color:#ffd43b"></i> PYTHON</div>
             <div class="skill-tag"><i class="fab fa-react" style="color:#61dbfb"></i> REACT.JS</div>
+            <div class="skill-tag"><i class="fab fa-node-js" style="color:#68a063"></i> NODE.JS</div>
             <div class="skill-tag"><i class="fab fa-js" style="color:#f7df1e"></i> JAVASCRIPT</div>
+            <div class="skill-tag"><i class="fas fa-mobile-screen-button" style="color:var(--primary)"></i> APP DEV</div>
+            <div class="skill-tag"><i class="fas fa-bolt" style="color:#ffffff"></i> NEXT.JS</div>
             <div class="skill-tag"><i class="fas fa-robot" style="color:var(--primary)"></i> AI LOGIC</div>
+            <div class="skill-tag"><i class="fas fa-database" style="color:#47a248"></i> MONGODB/SQL</div>
+            <div class="skill-tag"><i class="fas fa-network-wired" style="color:#38bdf8"></i> REST APIs</div>
+            <div class="skill-tag"><i class="fab fa-git-alt" style="color:#f05032"></i> GIT & GITHUB</div>
             <div class="skill-tag"><i class="fab fa-html5" style="color:#e34c26"></i> HTML5/CSS3</div>
+        </div>
+
+        <!-- CERTIFIED FROM (FORAGE, TATA, FLIPKART SCOA) -->
+        <div style="text-align: center; margin-top: 25px; margin-bottom: -10px;">
+            <h2 class="section-title" style="font-size: 1.8rem;">Certified <span>From</span></h2>
+        </div>
+
+        <div class="cert-container">
+            <!-- 1. FORAGE -->
+            <div class="cert-badge">
+                <div class="cert-img-box">
+                    <img src="https://i.postimg.cc/5tM0R9mB/forage-schema-logo.png" onerror="this.onerror=null;this.src='https://cdn-assets.theforage.com/favicon/favicon-32x32.png';" alt="Forage Logo">
+                </div>
+                <div class="cert-details">
+                    <h4>FORAGE</h4>
+                    <span>Simulation</span>
+                </div>
+            </div>
+
+            <!-- 2. TATA -->
+            <div class="cert-badge">
+                <div class="cert-img-box">
+                    <img src="https://i.postimg.cc/76HLqBdM/Tata-logo-svg.png" alt="Tata Logo">
+                </div>
+                <div class="cert-details">
+                    <h4>TATA</h4>
+                    <span>Industry</span>
+                </div>
+            </div>
+
+            <!-- 3. FLIPKART SCOA -->
+            <div class="cert-badge">
+                <div class="cert-img-box">
+                    <img src="https://i.postimg.cc/VNB6QyGS/d02c53e5931cb2fbb7f9bc085d995b1c.jpg" alt="Flipkart SCOA Logo">
+                </div>
+                <div class="cert-details">
+                    <h4>FLIPKART</h4>
+                    <span>SCOA Certified</span>
+                </div>
+            </div>
         </div>
 
         <section class="work-container">
@@ -286,78 +430,96 @@
                 <span class="finance-tag">FINANCE & SOLUTIONS</span>
                 <h3 class="biz-name">REPIIT FINANCE</h3>
                 <p class="biz-desc">Your trusted partner for financial planning, investment strategies, and wealth management. Secure your future today.</p>
-                <button onclick="showPage('repiit-details')" class="biz-btn" style="background: var(--primary); color: #000;">Expert Advice 💰</button>
+                <button onclick="showPage('repiit-details')" class="biz-btn">Expert Advice 💰</button>
             </div>
 
             <div class="tech-card">
                 <span class="finance-tag">WEB & SOFTWARE DEVELOPMENT</span>
                 <h3 class="biz-name">TECH SOLUTIONS</h3>
                 <p class="biz-desc">Looking for a professional website or custom software? We build high-performance digital products tailored to your needs.</p>
-                <button onclick="showPage('tech-details')" class="biz-btn" style="background: var(--primary); color: #000;">Enquire Now 🚀</button>
+                <button onclick="showPage('tech-details')" class="biz-btn">Enquire Now 🚀</button>
             </div>
 
-            <h2 class="section-title">Projects <span>Success</span></h2>
+            <h2 class="section-title">Demo <span>Project</span></h2>
 
-            <div style="width: 100%; max-width: 380px; background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.08); padding: 25px; border-radius: 28px; margin: 0 auto 40px; text-align: left;">
+            <div style="width: 100%; max-width: 380px; background: var(--card-bg); border: 1px solid rgba(0, 242, 254, 0.15); padding: 25px; border-radius: 28px; margin: 0 auto 40px; text-align: left;">
                 <span style="color:var(--primary); font-size: 10px; font-weight: 800; letter-spacing: 2px;">LIVE ECOMMERCE</span>
                 <h3 style="font-family: 'Teko', sans-serif; font-size: 2.2rem; color: white; margin: 5px 0;">HomeCooked Food</h3>
                 <img src="https://i.ibb.co/nqw4Nc1n/Screenshot.jpg" style="width:100%; border-radius:15px; margin:15px 0;" alt="HomeCooked">
                 <p style="font-size: 13px; color: #94a3b8; margin-bottom: 15px; line-height: 1.5;">A premium food ordering platform designed for speed and a seamless user experience. Real-time updates & modern UI.</p>
-                <a href="https://homecookedfood.vercel.app/" target="_blank" class="biz-btn" style="background: var(--primary); color: #000; width:100%; text-align:center; display:block;">VISIT WEBSITE 🌐</a>
+                <a href="https://homecookedfood.vercel.app/" target="_blank" class="biz-btn" style="width:100%; text-align:center; display:block;">VISIT WEBSITE 🌐</a>
             </div>
 
             <h2 class="section-title">My <span>Podcast</span></h2>
-            <div style="width: 100%; max-width: 380px; background: #111; border: 1px solid var(--primary); padding: 15px; border-radius: 28px; margin: 0 auto 40px auto; overflow: hidden; box-shadow: 0 0 20px rgba(0, 255, 163, 0.1); text-align: center;">
+            <div style="width: 100%; max-width: 380px; background: #070d18; border: 1px solid var(--primary); padding: 15px; border-radius: 28px; margin: 0 auto 40px auto; overflow: hidden; box-shadow: 0 0 20px rgba(0, 242, 254, 0.15); text-align: center;">
                 <p style="font-size: 10px; color: var(--primary); font-weight: 800; letter-spacing: 2px; margin-bottom: 10px;">IN$TA MILLIONAI₹E SHOW</p>
                 <iframe src='https://widget.spreaker.com/player?show_id=5834775&theme=dark&playlist=show&playlist-continuous=true&chapters-image=true' width='100%' height='400px' frameborder='0' style="border-radius: 15px; margin-bottom: 15px;"></iframe>
-                <a href="https://www.spreaker.com/podcast/in-ta-millionai-se--5834775" target="_blank" class="biz-btn" style="background: var(--primary); color: #000; width: 100%; text-align:center;">LISTEN ON SPREAKER 🎙️</a>
-            </div>
-            <h2 class="section-title">Featured <span>Project</span></h2>
-            
-            <div class="container">
-                <div class="header">
-                    <h1>InstaGrow</h1>
-                    <p style="text-align:center; font-size:10px; color:#64748b; letter-spacing:2px; margin-top:5px; font-weight:800;">VIRAL SCRIPT ENGINE</p>
-                </div>
-                <select id="language-select">
-                    <option value="Hinglish">Language: Hinglish 🇮🇳</option>
-                    <option value="Hindi">Language: Hindi 🇮🇳</option>
-                    <option value="English">Language: English 🇺🇸</option>
-                    <option value="Odia">Language: Odia 🇮🇳</option>
-                </select>
-                <input type="text" id="topic" placeholder="Enter topic (e.g. Solo Travel Tips)">
-                <button onclick="generateAI()">GENERATE VIRAL SCRIPT 🚀</button>
-                <div id="loader" style="display:none; text-align:center; margin:25px; color:var(--primary); font-weight:bold; font-size:14px;">Processing हिNDIE VLOGGER... ⚡</div>
-                <div id="result-container">
-                    <div class="result-box" id="result"></div>
-                    <div class="copy-btn" onclick="copyContent()">COPY SCRIPT 📋</div>
-                </div>
+                <a href="https://www.spreaker.com/podcast/in-ta-millionai-se--5834775" target="_blank" class="biz-btn" style="width: 100%; text-align:center;">LISTEN ON SPREAKER 🎙️</a>
             </div>
 
-            <div class="subscribe-box">
-                <h3 class="sub-title">Stay <span>Updated</span></h3>
-                <p class="sub-desc">New tech tips aur travel deals ke liye subscribe karein!</p>
-                <input type="email" id="sub-email" placeholder="Apna email enter karein" style="margin-top:0;">
-                <button onclick="handleSubscribe()" style="background: var(--primary); color: #000;">SUBSCRIBE NOW 📧</button>
+            <h2 class="section-title">Upcoming <span>Apps & Brands</span></h2>
+            
+            <!-- APP 1: MYST -->
+            <div class="app-card">
+                <span class="finance-tag" style="color: #38bdf8;">LUXURY & CUSTOM GIFTS</span>
+                <div style="display:flex; align-items:center; gap:14px; margin: 12px 0;">
+                    <img src="https://i.postimg.cc/CLJccdsT/Airbrush-IMAGE-ENHANCER-1790025965960-1790025965962.jpg" alt="MYST Logo" style="width:58px; height:58px; border-radius:16px; object-fit:cover; border:2px solid var(--primary); box-shadow:0 0 12px rgba(0,242,254,0.3);">
+                    <h3 class="biz-name" style="margin:0;">MYST</h3>
+                </div>
+                <p class="biz-desc">Handcrafted customized chocolates aur personalized premium gift hampers banata hai. Special moments aur celebrations ke liye perfect choice.</p>
+                <div class="biz-btn" style="width:100%; text-align:center; display:block; cursor:default; opacity:0.9;">COMING SOON ⏳</div>
+            </div>
+
+            <!-- APP 2: NIBEDITA KITCHEN -->
+            <div class="app-card">
+                <span class="finance-tag">FOOD & CLOUD KITCHEN</span>
+                <div style="display:flex; align-items:center; gap:14px; margin: 12px 0;">
+                    <img src="https://i.postimg.cc/ncT33MGZ/IMG-20260904-WA0001.webp" alt="Nibedita Kitchen Logo" style="width:58px; height:58px; border-radius:16px; object-fit:cover; border:2px solid var(--primary); box-shadow:0 0 12px rgba(0,242,254,0.3);">
+                    <h3 class="biz-name" style="margin:0;">NIBEDITA KITCHEN</h3>
+                </div>
+                <p class="biz-desc">Ek authentic cloud kitchen service jahan fresh, hygienic aur tasty Breakfast, Lunch aur Dinner banakar seedha aapke ghar deliver kiya jata hai.</p>
+                <div class="biz-btn" style="width:100%; text-align:center; display:block; cursor:default; opacity:0.9;">COMING SOON ⏳</div>
+            </div>
+
+            <!-- WHATSAPP DIRECT CONTACT FORM SECTION -->
+            <div class="contact-box">
+                <h3 class="contact-title">Let's <span>Connect</span></h3>
+                <p class="contact-desc">Apni requirement batayein, direct mere WhatsApp par baat karein!</p>
+                
+                <input type="text" id="contact-name" placeholder="Apna Naam (Full Name)">
+                
+                <select id="contact-service">
+                    <option value="Web / App Development">💻 Web / App Development</option>
+                    <option value="Skylink Holidays & Travel">✈️ Skylink Holidays & Flight Bookings</option>
+                    <option value="Repiit Finance Solutions">💰 Repiit Finance Advisory</option>
+                    <option value="MYST Chocolates & Gifts">🎁 MYST Custom Chocolates & Gifts</option>
+                    <option value="Nibedita Kitchen Delivery">🍲 Nibedita Kitchen Food Orders</option>
+                    <option value="General Inquiry">✨ General / Other Inquiry</option>
+                </select>
+                
+                <textarea id="contact-msg" placeholder="Aapki requirement kya hai? (Kripya thoda detail likhein)" rows="3"></textarea>
+                
+                <button onclick="sendToWhatsApp()"><i class="fab fa-whatsapp"></i> SEND ON WHATSAPP 💬</button>
             </div>
 
             <h2 class="section-title" style="margin-top: 60px; font-size: 1.8rem; margin-bottom: 15px;">Stay <span>Connected</span></h2>
             <div class="social-grid">
-                <a href="https://www.instagram.com/hindie_vlogger?igsh=MzRlODBiNWFlZA==" class="social-link ig" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://youtube.com/@hindievlogger" class="social-link yt" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://wa.me/message/6CJSZSPPROGGK1" class="social-link wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://t.me/Hindievlogger" class="social-link tg" target="_blank"><i class="fab fa-telegram"></i></a>
-                <a href="https://www.facebook.com/share/1CyEn4q9Zu/" class="social-link fb" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/mayankpradhan.official?stkn=ZWlzcXM2djZhNTg2" class="social-link ig" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@hindievlogger" class="social-link yt" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me/Mayu.Wp" class="social-link wa" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/Hindievlogger" class="social-link tg" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.facebook.com/Mayankpradhan.official?mibextid=ZbWKwL" class="social-link fb" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
             </div>
         </section>
 
         <footer>
             <p>MADE WITH ❤️ BY <br>
-            <b style="color:var(--primary); font-size:14px;">हिNDIE VLOGGER</b><br>
+            <b style="color:var(--primary); font-size:14px;">MAYANK PRADHAN</b><br>
             &copy; 2026 ALL RIGHTS RESERVED</p>
         </footer>
     </div>
 
+    <!-- SKYLINK DETAILS PAGE -->
     <div id="skylink-details" class="detail-page">
         <div class="back-btn" onclick="hidePage()"><i class="fas fa-arrow-left"></i> BACK TO HOME</div>
         <div class="detail-banner" style="background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80');"></div>
@@ -366,9 +528,10 @@
         <div class="service-list-item"><h4>Visa Assistance</h4><p>Dubai, Thailand, Singapore aur Europe ke liye fast processing.</p></div>
         <div class="service-list-item"><h4>Holiday Packages</h4><p>Customized honeymoon aur family tours.</p></div>
         <div class="service-list-item"><h4>Hotel Bookings</h4><p>Premium hotels at budget-friendly prices.</p></div>
-        <a href="https://wa.me/message/6CJSZSPPROGGK1" class="biz-btn" style="width:100%; text-align:center; margin-top:20px;">BOOK NOW ON WHATSAPP</a>
+        <a href="https://wa.me/Mayu.Wp" class="biz-btn" style="width:100%; text-align:center; margin-top:20px;">BOOK NOW ON WHATSAPP</a>
     </div>
 
+    <!-- REPIIT FINANCE DETAILS PAGE -->
     <div id="repiit-details" class="detail-page">
         <div class="back-btn" onclick="hidePage()"><i class="fas fa-arrow-left"></i> BACK TO HOME</div>
         <div class="detail-banner" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');"></div>
@@ -378,9 +541,10 @@
         <div class="service-list-item"><h4>Insurance</h4><p>Health aur Life Insurance se family secure karein.</p></div>
         <div class="service-list-item"><h4>Loans & Credit Cards</h4><p>Fast processing aur easy documentation.</p></div>
         <div class="service-list-item"><h4>Bank Accounts</h4><p>Zero balance aur premium savings account openings.</p></div>
-        <a href="https://wa.me/message/6CJSZSPPROGGK1" class="biz-btn" style="width:100%; text-align:center; background: var(--primary); margin-top:20px;">GET EXPERT ADVICE 💰</a>
+        <a href="https://wa.me/Mayu.Wp" class="biz-btn" style="width:100%; text-align:center; background: var(--primary); margin-top:20px;">GET EXPERT ADVICE 💰</a>
     </div>
 
+    <!-- TECH SOLUTIONS DETAILS PAGE -->
     <div id="tech-details" class="detail-page">
         <div class="back-btn" onclick="hidePage()"><i class="fas fa-arrow-left"></i> BACK TO HOME</div>
         <div class="detail-banner" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80');"></div>
@@ -390,10 +554,10 @@
         <div class="service-list-item"><h4>Software Development</h4><p>Business automation aur custom software solutions.</p></div>
         <div class="service-list-item"><h4>AI Chatbots</h4><p>Custom AI integration (Groq API, Llama).</p></div>
         <div class="service-list-item"><h4>E-commerce</h4><p>Full online store setup for your brand.</p></div>
-        <a href="https://wa.me/message/6CJSZSPPROGGK1" class="biz-btn" style="width:100%; text-align:center; background: var(--primary); margin-top:20px;">BUILD YOUR IDEA 🚀</a>
+        <a href="https://wa.me/Mayu.Wp" class="biz-btn" style="width:100%; text-align:center; background: var(--primary); margin-top:20px;">BUILD YOUR IDEA 🚀</a>
     </div>
 
-    <div id="toast">Copied to Clipboard! 🚀</div>
+    <div id="toast">Message Sent! 🚀</div>
 
     <script>
         function showPage(id) {
@@ -409,12 +573,6 @@
             window.scrollTo(0,0);
         }
 
-        function handleSubscribe() {
-            const email = document.getElementById('sub-email').value;
-            if(email) { showToast("Subscription successful! 📧"); document.getElementById('sub-email').value = ""; } 
-            else { showToast("Please enter email! ⚠️"); }
-        }
-
         function showToast(msg) {
             const toast = document.getElementById("toast");
             toast.innerText = msg;
@@ -422,52 +580,33 @@
             setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
         }
 
-        async function generateAI() {
-            const topic = document.getElementById('topic').value;
-            const lang = document.getElementById('language-select').value; // Naya language dropdown fetch kiya
-            const resCont = document.getElementById('result-container');
-            const resBox = document.getElementById('result');
-            const loader = document.getElementById('loader');
+        /* --- WHATSAPP REDIRECT FUNCTION --- */
+        function sendToWhatsApp() {
+            const name = document.getElementById('contact-name').value.trim();
+            const service = document.getElementById('contact-service').value;
+            const msg = document.getElementById('contact-msg').value.trim();
 
-            if(!topic) return showToast("Topic daalo bhai! ⚠️");
-            
-            loader.style.display = "block";
-            resCont.style.display = "none";
-
-            try {
-                const response = await fetch("/api/generate", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ 
-                        topic: topic,
-                        language: lang // Backend ko language bhej raha hoon
-                    })
-                });
-                
-                const data = await response.json();
-                
-                if (data.choices && data.choices[0].message) {
-                    resBox.innerText = data.choices[0].message.content;
-                    resCont.style.display = "block";
-                } else if (data.error) {
-                    resBox.innerText = "Error: " + (data.error.message || data.error);
-                    resCont.style.display = "block";
-                } else {
-                    throw new Error("Invalid Response");
-                }
-
-            } catch (err) {
-                resBox.innerText = "Error! Deploy with GROQ_API_KEY in Vercel and REDEPLOY.";
-                resCont.style.display = "block";
-            } finally {
-                loader.style.display = "none";
+            if (!name) {
+                showToast("Kripya apna naam bharein! ⚠️");
+                return;
             }
-        }
+            if (!msg) {
+                showToast("Kripya requirement likhein! ⚠️");
+                return;
+            }
 
-        function copyContent() {
-            const text = document.getElementById('result').innerText;
-            navigator.clipboard.writeText(text);
-            showToast("Copied to Clipboard! 🚀");
+            const fullMessage = `👋 *Hello Mayank, I have an inquiry!*%0A%0A` +
+                                `👤 *Name:* ${encodeURIComponent(name)}%0A` +
+                                `📌 *Service:* ${encodeURIComponent(service)}%0A` +
+                                `📝 *Requirement:* ${encodeURIComponent(msg)}%0A%0A` +
+                                `_Sent from mayankpradhan website_`;
+
+            const waURL = `https://wa.me/919078776313?text=${fullMessage}`;
+            window.open(waURL, '_blank');
+            showToast("Redirecting to WhatsApp... 🚀");
+
+            document.getElementById('contact-name').value = "";
+            document.getElementById('contact-msg').value = "";
         }
     </script>
 </body>
